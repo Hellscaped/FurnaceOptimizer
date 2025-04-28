@@ -1,22 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "fastfurnace",
+  "id": "furnaceoptimizer",
   "version": "${version}",
 
-  "name": "FastFurnace",
+  "name": "FurnaceOptimizer",
   "description": "Optimizations for the vanilla furnace",
   "authors": [
+    "Hellscaped",
     "Tfarecnim",
     "ShadowsOfFire"
   ],
   "contact": {
-    "homepage": "https://github.com/Tfarcenim/FabricFastFurnace",
-    "sources": "https://github.com/Tfarcenim/FabricFastFurnace",
-    "issues": "https://github.com/Tfarcenim/FabricFastFurnace/issues"
+    "homepage": "https://github.com/Hellscaped/FurnaceOptimizer",
+    "sources": "https://github.com/Hellscaped/FurnaceOptimizer",
+    "issues": "https://github.com/Hellscaped/FurnaceOptimizer/issues"
   },
 
   "license": "MIT",
-  "icon": "assets/fastfurnace/icon.png",
+  "icon": "assets/furnaceoptimizer/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -24,11 +25,11 @@
   },
 
   "mixins": [
-    "fastfurnace.mixins.json"
+    "furnaceoptimizer.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.2"
+    "fabricloader": ">=0.16.10"
   },
 
   "breaks": {

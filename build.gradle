@@ -1,7 +1,8 @@
 plugins {
-	id 'fabric-loom' version '0.12.+'
+	id 'fabric-loom' version '1.10-SNAPSHOT'
 	id 'maven-publish'
 }
+
 
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
@@ -13,36 +14,13 @@ loom {
 }
 
 repositories {
-	maven {
-		url "https://maven.shedaniel.me"
-		content {
-			includeGroup "me.shedaniel.cloth.api"
-			includeGroup "me.sargunvohra.mcmods"
-			includeGroup "me.shedaniel.cloth"
-			includeGroup "me.shedaniel"
-			includeGroup "dev.architectury"
-		}
-	}
+
 }
 
 dependencies {
-	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings(loom.officialMojangMappings())
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	// modImplementation("me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}") {
-	//      exclude(group: "net.fabricmc.fabric-api")
-	//  }
-
-	//modRuntime "diggusmaximus:diggusmaximus:1.3.1-1.16"
-
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	compileOnly "com.google.code.findbugs:jsr305:+"
-
-	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-	// You may need to force-disable transitiveness on them.
 }
 
 processResources {
@@ -54,14 +32,10 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 	it.options.release = 17
 }
 
 java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 }
 
@@ -71,19 +45,3 @@ jar {
 	}
 }
 
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
-	}
-}

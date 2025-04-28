@@ -1,11 +1,11 @@
-package tfar.fastfurnace.mixin;
+package dev.hellscaped.furnaceoptimizer.mixin;
 
 import net.minecraft.server.ReloadableServerResources;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import tfar.fastfurnace.Hooks;
+import dev.hellscaped.furnaceoptimizer.Hooks;
 
 @Mixin(ReloadableServerResources.class)
 class ServerResourceManagerMixin {

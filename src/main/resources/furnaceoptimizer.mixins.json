@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "tfar.fastfurnace.mixin",
+  "package": "dev.hellscaped.furnaceoptimizer.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "AbstractFurnaceBlockEntityMixin",

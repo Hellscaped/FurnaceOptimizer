@@ -1,4 +1,4 @@
-package tfar.fastfurnace;
+package dev.hellscaped.furnaceoptimizer;
 
 
 import net.minecraft.world.item.Item;
